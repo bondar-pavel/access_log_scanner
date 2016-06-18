@@ -49,9 +49,9 @@ Once repository is cloned script is ready for use.
                           Path to apache access_log file.
     -t THRESHOLD, --threshold=THRESHOLD
                           If ip address is met in log more than this level ip is
-                          treaded as malicious.
+                          treated as malicious.
     -b BLOCK_TYPE, --block_type=BLOCK_TYPE
-                          Type of access limiting to use. 'http' and 'full' are
+                          Type of access limitation to use. 'http' and 'full' are
                           available for now. 'http' restricts access to port 80,
                           'full' restricts any access.
 

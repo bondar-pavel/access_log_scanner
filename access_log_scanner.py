@@ -12,9 +12,9 @@ parser.add_option("-l", "--log_file", dest="apache_log",
 parser.add_option("-t", "--threshold", dest="threshold",
                   default=50, type=int,
                   help="If ip address is met in log more than "
-                  "this level ip is treaded as malicious.")
+                  "this level ip is treated as malicious.")
 parser.add_option("-b", "--block_type", dest="block_type",
-                  default="full", help="Type of access limiting to use. "
+                  default="full", help="Type of access limitation to use. "
                   "'http' and 'full' are available for now. 'http' restricts "
                   "access to port 80, 'full' restricts any access. ")
 
