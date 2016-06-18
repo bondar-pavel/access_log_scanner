@@ -10,7 +10,8 @@ parser.add_option("-l", "--log_file", dest="apache_log",
                   default="/var/log/httpd/access_log",
                   help="Path to apache access_log file.")
 parser.add_option("-t", "--threshold", dest="threshold",
-                  default=50, help="If ip address is met in log more than "
+                  default=50, type=int,
+                  help="If ip address is met in log more than "
                   "this level ip is treaded as malicious.")
 parser.add_option("-b", "--block_type", dest="block_type",
                   default="full", help="Type of access limiting to use. "
