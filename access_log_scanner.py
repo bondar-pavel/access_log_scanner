@@ -22,7 +22,7 @@ parser.add_option("-b", "--block_type", dest="block_type",
 # Exclude local acesses
 white_list = ['::1', '127.0.0.1']
 block_patterns = {'full': 'iptables -A INPUT -s {} -j DROP',
-                  'http': 'iptables -A INPUT -p tcp -dport 80 -s {} -j DROP'}
+                  'http': 'iptables -A INPUT -p tcp --dport 80 -s {} -j DROP'}
 ip_tables_commands = []
 ip_access = defaultdict(int)
 
@@ -43,7 +43,8 @@ if path.isfile(options.apache_log):
             break
         print("%s: %s" % (ip, ip_access[ip]))
         if ip not in white_list:
-            ip_tables_commands.append(ip_tables_pattern.format(ip))
+            pattern = block_patterns[options.block_type]
+            ip_tables_commands.append(pattern.format(ip))
 
     print("To block access to these ips use next command")
     print('\n'.join(ip_tables_commands))
